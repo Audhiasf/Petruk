@@ -1,0 +1,154 @@
+/* 1. Diberikan bilangan positif n, lakukan:
+- jika 1 < n < 9, cetak dalam huruf kecil angka yang diberikan (misal satu, dua, tiga, dst)
+- jika n> 9, cetak Lebih dari 9
+*/
+
+#include <iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    
+    if(n>=1 && n<=9){
+        switch(n){
+            case 1:
+                cout<<"satu";
+                break;
+            case 2:
+                cout<<"dua";
+                break;
+            case 3:
+                cout<<"tiga";
+                break;
+            case 4:
+                cout<<"empat";
+                break;
+            case 5:
+                cout<<"lima";
+                break;
+            case 6:
+                cout<<"enam";
+                break;
+            case 7:
+                cout<<"tujuh";
+                break;
+            case 8:
+                cout<<"delapan";
+                break;
+            case 9:
+                cout<<"sembilan";
+                break;
+        }
+    }
+    else if (n>9){
+        cout<<"Lebih dari 9";
+    }
+    
+}
+
+/* 2. Buat sebuah fungsi  tanpa return dengan nama bilangan , dimana parameter fungsi berupa sebuah bilangan positif n, fungsi dapat melakukan :
+- jika 1 < n < 9, cetak dalam huruf kecil angka yang diberikan (misal satu, dua, tiga, dst)
+- jika n> 9, cetak Lebih dari 9
+*/
+
+#include <iostream>
+using namespace std;
+
+void bilangan (int n){
+     if (n >= 1 && n <= 9) {
+        switch (n) {
+            case 1:
+                cout << "satu";
+                break;
+            case 2:
+                cout << "dua";
+                break;
+            case 3:
+                cout << "tiga";
+                break;
+            case 4:
+                cout << "empat";
+                break;
+            case 5:
+                cout << "lima";
+                break;
+            case 6:
+                cout << "enam";
+                break;
+            case 7:
+                cout << "tujuh";
+                break;
+            case 8:
+                cout << "delapan";
+                break;
+            case 9:
+                cout << "sembilan";
+                break;
+            }
+        } 
+    else if (n > 9) {
+        cout << "Lebih dari 9";
+    }
+}
+int main() {
+	int n;
+	cin>>n;
+	bilangan(n);
+}
+
+/* 3. Buat program untuk membaca input dari keyboard. Data inputan ditampung ke dalam tipe variabel yang sesuai.
+Terdiri dari 5 input data a b c d e, yang masing-masing merupakan data dengan tipe integer, long, char, float dan double. 
+Cetak tiap elemen  pada baris baru dengan urutan yang sama dengan input.
+Catatan: untuk nilai float dicetak hingga 3 tempat desimal, dan untuk nilai double dicetak hingga 9 tempat desimal.
+*/
+
+#include <iostream>
+using namespace std;
+int main(){
+    int a;
+    int long b;
+    char c;
+    float d;
+    double e;
+    
+    cin>>a>>b>>c>>d>>e;
+    
+    cout<<a<<endl;
+    cout<<b<<endl;
+    cout<<c<<endl;
+    cout.precision(3);
+    cout<<fixed<<d<<endl;
+    cout.precision(9);
+    cout<<fixed<<e<<endl;
+}
+
+/* 4. Read  numbers from stdin and print their sum to stdout.
+One line that contains  space-separated integers: a, b, and c.
+Print the sum of the three numbers on a single line.
+*/
+
+#include <iostream>
+using namespace std;
+int main(){
+    int a, b, c, sum;
+    cin>>a>>b>>c;
+    
+    sum = a + b + c;
+    cout<<sum<<endl;
+}
+
+// 5. Tulis sebuah fungsi int max_of_four(int a, int b, int c, int d) yang mengembalikan maksimum dari empat argumen yang diterimanya.
+
+int max_of_four(int a, int b, int c, int d) {
+    int max = a;
+    if (b > max) {
+        max = b;
+    }
+    if (c > max) {
+        max = c;
+    }
+    if (d > max) {
+        max = d;
+    }
+    return max;
+}
