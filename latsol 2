@@ -1,0 +1,126 @@
+/* 1. Buatlah Program yang memiliki Fungsi dengan nama jarak untuk menghitung jarak antara dua titik (x1,y1) dan (x2,y2).
+Fungsi tersebut memiliki satu parameter bertipe Float, dimana rumus menghitung jarak adalah D = [( x2 – x1 )^2 + (y2 – y1)^2 ]^1/2
+*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+float jarak(float x[]){
+	return sqrt(pow(x[3]-x[0],2) + pow(x[1]-x[2],2));
+}
+
+int main(){
+	float arr[4];
+	
+	for(int i=0; i<4; i++){
+		cin>>arr[i];
+	}
+	
+	cout<<jarak(arr);
+}
+
+/* 2. Buatlah sebuah Fungsi menghitung baris dan deret aritmatika menggunakan Prosedur.
+Program memiliki dua buah prosedur dengan masing-masing memiliki tiga parameter yaitu nilai awal, selisih, dan jumlah suku. 
+Bilangan dalam baris merupakan bilangan positif.
+Apabila terdapat bilangan negatif (kurang dari nol) dalam baris, program akan menampilkan “Not Found” lalu berhenti.
+*/
+
+void deret(int a, int d, int n) {
+    int has = (n*(2 * a + (n - 1) * d))/2;
+    cout<<has;
+}
+
+void baris(int a, int d, int n) {
+    int temp = 0;
+    for (int i = 1; i <= n; i++) {
+        temp = a + (i-1) * d;
+        if(temp>=0){
+        cout << temp << " ";
+        }
+        else{
+        cout<<"Not Found";
+        exit(0);
+        }
+    }
+    cout << endl;
+}
+
+/* 3. Buatlah sebuah Program menghitung perkalian 2 matriks.
+Program harus bisa mengkalikan 2 matriks dengan kondisi kolom matriks ke-1 harus sama dengan baris matriks ke-2. 
+Apabila kondisi tersebut tidak memenuhi maka akan mengeluarkan “Perkalian matriks tidak dapat dilakukan”.
+*/
+
+#include <iostream>
+using namespace std;
+int main(){
+    int m, n, a, b, jumlah = 0;
+
+    cin >> m >> n;
+
+    int mtr1[m][n];
+
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            cin >> mtr1[i][j];
+        }
+    }
+
+    cin >> a >> b;
+
+    int mtr2[a][b];
+
+    for(int i = 0; i < a; i++){
+        for(int j = 0; j < b; j++){
+            cin >> mtr2[i][j];
+        }
+    }
+
+    if(n == a){
+        int hasil[m][b];
+
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < b; j++){
+                for(int k = 0; k < a; k++){
+                    jumlah = jumlah + mtr1[i][k] * mtr2[k][j];
+                }
+                hasil[i][j] = jumlah;
+                jumlah = 0;
+            }
+        }
+
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < b; j++){
+                cout << hasil[i][j] << " ";
+            }
+            cout << endl;
+        }
+    }
+    else {
+        cout << "Perkalian matriks tidak dapat dilakukan";
+    }
+}
+
+/* 4. Buatlah sebuah fungsi dengan nama vPtr. Fungsi ini memiliki 2 parameter:
+1. Parameter pertama berupa void pointer yang nantinya akan diisi nilai integer ataupun char.
+2. Parameter kedua adalah sebuah variabel char yang akan diisi dengan tipe perintah.
+
+Ketentuan:
+1. Parameter char pada fungsi ini hanya akan diisi dengan huruf i atau c
+2. Jika char berisi huruf "i" maka pointer akan berisi sebuah integer, maka tampilkan 'ing' sebanyak nilai dalam pointer.
+3. Jika char berisi hurf "c" maka pointer akan berisi sebuah char, maka tampilkan 'ceng' diikuti karakter yang ada pada pointer dipisahkan dengan spasi
+*/
+
+void vPtr(void* p, char type)
+{
+    if (type == 'i')
+    {
+        for (int i = 0; i < *(int *)p;i++) {
+            cout << "ing" << endl;
+        }
+    }
+    else if (type == 'c')
+    {
+        cout << "ceng " << *(char*)p << endl;
+    }
+}
